@@ -1,6 +1,6 @@
 from PyQt6.QtWidgets import QApplication
-from startScreen import startWindow
+from startScreen import MainWindow
 app = QApplication([])
-window = startWindow()
+window = MainWindow()
 window.show()
 app.exec()

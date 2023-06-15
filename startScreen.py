@@ -1,10 +1,12 @@
-from PyQt6.QtWidgets import  QMainWindow,  QStackedWidget, QPushButton,QLineEdit,QFrame,QTextEdit
+from PyQt6.QtCore import Qt,QEvent,QObject
+from PyQt6.QtWidgets import  QMainWindow,  QStackedWidget, QPushButton,QLineEdit,QFrame,QTextEdit,QApplication
 from PyQt6 import uic
 
-class startWindow(QMainWindow):
+class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-
+        self.setWindowTitle('Student Medical Records')
+        self.setGeometry(800, 300, 500, 500)
         self.stacked_widget = QStackedWidget()
         self.setCentralWidget(self.stacked_widget)
 
@@ -26,6 +28,7 @@ class startWindow(QMainWindow):
         reset_button1 = self.secondUI.findChild(QPushButton, 'resetButton')
         reset_button.clicked.connect(lambda: self.resetForm("welcomeForm"))
         reset_button1.clicked.connect(lambda: self.resetForm("consultForm"))
+
 
         # Connect the clicked signal of the reset button to the reset_form function
     def resetForm(self,frameName):
@@ -52,4 +55,3 @@ class startWindow(QMainWindow):
         current_index = self.stacked_widget.currentIndex()
         new_index = (current_index - 1) % self.stacked_widget.count()
         self.stacked_widget.setCurrentIndex(new_index)
-    
