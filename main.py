@@ -1,5 +1,7 @@
-from PyQt6.QtWidgets import QApplication
 from startScreen import MainWindow
+
+from PyQt6.QtWidgets import QApplication
+
 app = QApplication([])
 window = MainWindow()
 window.show()
