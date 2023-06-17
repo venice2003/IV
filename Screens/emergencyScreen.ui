@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>557</width>
-    <height>903</height>
+    <height>668</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -139,7 +139,7 @@
               <number>0</number>
              </property>
              <item>
-              <widget class="QComboBox" name="month">
+              <widget class="QComboBox" name="dtMonth">
                <property name="mouseTracking">
                 <bool>false</bool>
                </property>
@@ -218,14 +218,14 @@
               </widget>
              </item>
              <item>
-              <widget class="QLineEdit" name="day">
+              <widget class="QLineEdit" name="dtDay">
                <property name="placeholderText">
                 <string>day</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QLineEdit" name="year">
+              <widget class="QLineEdit" name="dtYear">
                <property name="placeholderText">
                 <string>year</string>
                </property>

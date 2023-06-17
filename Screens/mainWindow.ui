@@ -352,6 +352,16 @@
                <property name="placeholderText">
                 <string>Select</string>
                </property>
+               <item>
+                <property name="text">
+                 <string>Course 1</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Course 2</string>
+                </property>
+               </item>
               </widget>
              </item>
              <item>
@@ -359,6 +369,16 @@
                <property name="placeholderText">
                 <string>Select</string>
                </property>
+               <item>
+                <property name="text">
+                 <string>Section 1</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Section 2</string>
+                </property>
+               </item>
               </widget>
              </item>
             </layout>

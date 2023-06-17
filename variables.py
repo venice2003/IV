@@ -21,7 +21,7 @@ variable_names1 = [
     "hi",
     "ep",
     "enp",
-    "anstma",
+    "asthma",
     "tb",
     "old",
     "hd",
@@ -38,7 +38,7 @@ variable_names1 = [
 
     "epDetails",
     "enpDetails",
-    "anstmaDetails",
+    "asthmaDetails",
     "tbDetails",
     "oldDetails",
 

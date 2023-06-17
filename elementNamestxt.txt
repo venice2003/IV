@@ -1,5 +1,5 @@
 mainWindow
-
+14
 lastName
 firstName
 middleInitial
@@ -16,6 +16,7 @@ gName
 gAddress
 
 emergencyScreen.ui
+10
 dtMonth
 dtDay
 dtYear
@@ -28,11 +29,11 @@ lmp
 impression
 
 medicHistory.ui
-
+30
 hi
 ep
 enp
-anstma
+asthma
 tb
 old
 hd
@@ -47,7 +48,7 @@ cc
 hiDetails
 epDetails
 enpDetails
-anstmaDetails
+asthmaDetails
 tbDetails
 oldDetails
 hdDetails

@@ -40,7 +40,7 @@ medicHistoryTexts = [
     "hi",
     "ep",
     "enp",
-    "anstma",
+    "asthma",
     "tb",
     "old",
     "hd",
@@ -55,7 +55,7 @@ medicHistoryTexts = [
     "hiDetails",
     "epDetails",
     "enpDetails",
-    "anstmaDetails",
+    "asthmaDetails",
     "tbDetails",
     "oldDetails",
     "hdDetails",
@@ -131,5 +131,6 @@ class MainWindow(QMainWindow):
                         all_data[widget_name] = widget.text()
                     elif isinstance(widget, QTextEdit):
                         all_data[widget_name] = widget.toPlainText()
+                else : print(f"{widget_name} NOT FOUND")
         validate(all_data)
         # print(all_data)
