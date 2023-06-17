@@ -1,6 +1,7 @@
 from PyQt6.QtGui import QIcon
 from PyQt6.QtWidgets import  QMainWindow,  QStackedWidget, QPushButton,QLineEdit,QFrame,QTextEdit,QCheckBox,QWidget,QComboBox
 from PyQt6 import uic
+from validation import validate
 resetObject = "reset"
 nextObject = "next"
 backObject = "back"
@@ -47,31 +48,26 @@ medicHistoryTexts = [
     "ulcer",
     "kp",
     "fse",
-
     "dtd",
     "std",
     "ldh",
     "cc",
     "hiDetails",
-
     "epDetails",
     "enpDetails",
     "anstmaDetails",
     "tbDetails",
     "oldDetails",
-
     "hdDetails",
     "hypertensionDetails",
     "ulcerDetails",
     "kpDetails",
     "fseDetails",
-
     "dtdDetails",
     "stdDetails",
     "ldhDetails",
     "ccDetails"
 ]
-
 uiData = [mainWindowTexts,emergencyScreenTexts,medicHistoryTexts]
 uiObjects = []
 class MainWindow(QMainWindow):
@@ -122,11 +118,8 @@ class MainWindow(QMainWindow):
         self.stacked_widget.setCurrentIndex(new_index)
     def retrieveAllData(self):
         print("retrieve ran")
-        # Create an empty dictionary to store all widget data
         all_data = {}
-        # Loop through all UI objects
         for index,ui in enumerate(uiObjects):
-            # Loop through the widget names and retrieve their data
             for widget_name in uiData[index]:
                 widget = ui.findChild(QWidget, widget_name)
                 if widget:
@@ -138,4 +131,5 @@ class MainWindow(QMainWindow):
                         all_data[widget_name] = widget.text()
                     elif isinstance(widget, QTextEdit):
                         all_data[widget_name] = widget.toPlainText()
-        print(all_data)
+        validate(all_data)
+        # print(all_data)
