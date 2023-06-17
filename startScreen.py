@@ -36,22 +36,42 @@ emergencyScreenTexts =[
     'impression'
 ]
 medicHistoryTexts = [
-    'hi',
-    'ep',
-    'enp',
-    'anstma',
-    'tb',
-    'old',
-    'hd',
-    'hypertension',
-    'ulcer',
-    'kp',
-    'fse',
-    'dtd',
-    'std',
-    'ldh',
-    'cc'
+    "hi",
+    "ep",
+    "enp",
+    "anstma",
+    "tb",
+    "old",
+    "hd",
+    "hypertension",
+    "ulcer",
+    "kp",
+    "fse",
+
+    "dtd",
+    "std",
+    "ldh",
+    "cc",
+    "hiDetails",
+
+    "epDetails",
+    "enpDetails",
+    "anstmaDetails",
+    "tbDetails",
+    "oldDetails",
+
+    "hdDetails",
+    "hypertensionDetails",
+    "ulcerDetails",
+    "kpDetails",
+    "fseDetails",
+
+    "dtdDetails",
+    "stdDetails",
+    "ldhDetails",
+    "ccDetails"
 ]
+
 uiData = [mainWindowTexts,emergencyScreenTexts,medicHistoryTexts]
 uiObjects = []
 class MainWindow(QMainWindow):
