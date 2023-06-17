@@ -18,6 +18,7 @@ while val <3: # di heart yan ha.
     val += 1
 # testing of reading the database
 result = database.read(tableName=tableName,column_names="*",condition="field1='value1'")
+result = database.create(column_names=['field1','field2'],data=['hatdog','itlog'],tableName=tableName)
 
 
 # either the one above, or this works, up to you.
