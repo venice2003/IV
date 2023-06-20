@@ -19,7 +19,7 @@ The data structure of the file will look like this :
   'section': '',
   'gName': '',
   'gAddress': '',
-
+   10
   'dtMonth': '',
   'dtDay': '',
   'dtYear': '',
@@ -30,6 +30,7 @@ The data structure of the file will look like this :
   'bmi': '',
   'lmp': '',
   'impression': '',
+
   'hi': False,
   'ep': False,
   'enp': False,
@@ -45,6 +46,7 @@ The data structure of the file will look like this :
   'std': False,
   'ldh': False,
   'cc': False,
+
   'hiDetails': '',
   'epDetails': '',
   'enpDetails': '',

@@ -2,72 +2,14 @@ from PyQt6.QtGui import QIcon
 from PyQt6.QtWidgets import  QMainWindow,  QStackedWidget, QPushButton,QLineEdit,QFrame,QTextEdit,QCheckBox,QWidget,QComboBox
 from PyQt6 import uic
 from validation import validate
+from texts import mainWindowTexts, emergencyScreenTexts,medicHistoryTexts
 resetObject = "reset"
 nextObject = "next"
 backObject = "back"
 nextEnd = "nextEnd"
 formFrame ="formFrame"
 files = ['Screens/mainWindow.ui', 'Screens/emergencyScreen.ui', 'Screens/medicHistory.ui']
-mainWindowTexts =  [
-    'lastName',
-    'firstName',
-    'middleInitial',
-    'age',
-    'contact',
-    'month',
-    'day',
-    'year',
-    'sex',
-    'academicYear',
-    'course',
-    'section',
-    'gName',
-    'gAddress'
-]
-emergencyScreenTexts =[
-    'dtMonth',
-    'dtDay',
-    'dtYear',
-    'bp',
-    'rr',
-    'height',
-    'weight',
-    'bmi',
-    'lmp',
-    'impression'
-]
-medicHistoryTexts = [
-    "hi",
-    "ep",
-    "enp",
-    "asthma",
-    "tb",
-    "old",
-    "hd",
-    "hypertension",
-    "ulcer",
-    "kp",
-    "fse",
-    "dtd",
-    "std",
-    "ldh",
-    "cc",
-    "hiDetails",
-    "epDetails",
-    "enpDetails",
-    "asthmaDetails",
-    "tbDetails",
-    "oldDetails",
-    "hdDetails",
-    "hypertensionDetails",
-    "ulcerDetails",
-    "kpDetails",
-    "fseDetails",
-    "dtdDetails",
-    "stdDetails",
-    "ldhDetails",
-    "ccDetails"
-]
+
 uiData = [mainWindowTexts,emergencyScreenTexts,medicHistoryTexts]
 uiObjects = []
 class MainWindow(QMainWindow):

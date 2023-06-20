@@ -2,6 +2,8 @@ from typing import List, Optional,Union
 import warnings
 import mysql
 import mysql.connector
+from texts import mainWindowTexts, emergencyScreenTexts,medicHistoryTexts
+columns = [*mainWindowTexts,*emergencyScreenTexts,*medicHistoryTexts]
 """
     Class responsible for database connection, disconnection and returning data from the database
 """
@@ -52,9 +54,11 @@ class db:
         if not hasattr(self, "db"):
             raise Exception("No connected database. Use connect() first before doing operations")
         try:
+            print(data)
             cursor = self.db.cursor()
-            query = f"INSERT INTO {tableName} ({', '.join(column_names)}) VALUES ({', '.join(['%s'] * len(column_names))})"
-            cursor.execute(query, data)
+            placeholders = ', '.join(['%s'] * len(data))  # Generate placeholders for the values
+            query = f"INSERT INTO {tableName} ({', '.join(column_names)}) VALUES ({placeholders})"
+            cursor.execute(query, data)  
             self.db.commit()
             cursor.close()
             print("Data added to the database")
@@ -130,20 +134,28 @@ class db:
         # since ako mostly gumawa nito, ikaw na mag tapos ng delete. kaya niyo na yan
         #remove pass when you finished your  code
         pass
-    def createDatabase(self,host:str, username:str,password:str,):
+    def createDatabase(self,host:str, username:str,password:str):
+        
         if( hasattr(self,"db")):     
             raise Exception("Database connected twice check for double calls")
         self.db = mysql.connector.connect(host=host, user=username, password=password)
         cursor =self.db.cursor()
-        cursor.execute(f"DROP DATABASE IF EXISTS testdatabase")
-        cursor.execute(f"CREATE DATABASE testdatabase")
+        cursor.execute(f"DROP DATABASE IF EXISTS medicalForms")
+        cursor.execute(f"CREATE DATABASE medicalForms")
         cursor.close()
         self.db.close()
         print("Database created successfully")
+        self.db = mysql.connector.connect(host=host, user=username, password=password, database="medicalForms")
+        cursor = self.db.cursor()
 
-        self.db = mysql.connector.connect(host=host, user=username, password=password,database="testdatabase")
-        cursor =self.db.cursor()
-        cursor.execute(f"CREATE TABLE tableTest (field1 varchar(30) NOT NULL, field2 varchar(30) NOT NULL)")
+        # Join the column definitions into a comma-separated string with proper formatting
+        columns_str = ', '.join([f'{column} VARCHAR(64)' for column in columns])
+
+        # Create the CREATE TABLE query
+        query = f"CREATE TABLE formData ({columns_str})"
+
+        # Execute the CREATE TABLE query
+        cursor.execute(query)
         print("Table created successfully")
        # have this always at the last part of the code
         cursor.close()
@@ -158,4 +170,5 @@ class db:
         """        
         self.db.close()
         del self.db
+
         return
